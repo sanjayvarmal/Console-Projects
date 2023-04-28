@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>sample</title>
+	<style>
+		*{
+			font-family:'Inter',sans-serif;
+			padding:0;
+			margin:0;
+		}
+		header{
+			position: absolute;
+			height:10vh;
+			background: transparent;
+			backdrop-filter: blur(10px);
+		}
+		#body{
+			overflow: hidden;
+			position: relative;
+			height: 100vh;
+			width:100%;
+		}
+		#img{
+			animation: ani 0.5s ease-out;
+			position: absolute;
+			top: 20%;
+			right: 0%;
+		}
+		#roundback{
+			filter: blur(10px);
+			position: absolute;
+			top: 0%;
+			right: 0%;
+			background: lightgreen;
+			height: 700px;
+			width: 700px;
+			border-bottom-left-radius: 100%;
+		}
+		#heading h1{
+			font-size: 50px;
+		}
+		h1,h2,h3{
+			text-align: center;
+		}
+		#heading{
+			min-height: 30vh;
+			width: 35%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column;
+			position: absolute;
+			top: 33%;
+			left: 5%;
+			z-index: 100;
+		}
+		@keyframes ani{
+			50%{
+				transform: rotateX(25deg);
+			}
+		}
+
+	header{
+		padding: 10px 20px;
+		width: 97%;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		backdrop-filter:blur(10px);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	header span{
+		font-size: 20px;
+		font-weight: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	header span img{
+		width: 5rem;
+	}
+	header ul {
+		width:32rem;
+	}
+	header ul li{
+		list-style-type: none;
+		float: left;
+		padding: 8px 12px;
+	}
+	header ul li:not(:nth-child(4)){
+		margin-right: 4rem;
+	}
+	header ul li a{
+		color: black;
+		text-decoration: none;
+	}
+	header ul li:hover{
+		background-color: white;
+	}
+	#desc{
+		height: 98vh;
+		width: 100%;
+	}
+	#desc .box{
+		box-shadow:7px 6px 10px 7px rgba(144, 238, 144,0.5);
+		margin-bottom: 10px;
+		min-height: 30vh;
+		border-radius: 10px;
+		border-top-left-radius: 70px;
+		width: 16%;
+	}
+	#headbody{
+		height: 50vh;
+		padding: 20px 30px;
+	}
+	#head{
+		padding: 15px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.box i{
+		text-align: center;
+		font-size: 70px;
+		height: 17vh;
+		padding-top: 50px;
+		display: block;
+	}
+	.box span{
+		display: block;
+		width: 13rem;
+		padding: 20px 0px;
+		text-align: center;
+	}
+	h1 p{
+		margin-bottom: 1rem;
+	}
+	#book{
+		position: relative;
+		padding: 30px 40px;
+		height: 92vh;
+		width: auto;
+	}
+	#map{
+		padding: 20px 14px;
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(20px);
+		height: 80vh;
+		width: 80%;
+	}
+	#bookcont{
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+		position: absolute;
+		top: 20%;
+		right: 10%;
+		height: 50vh;
+		width: 30%;
+	}
+	#bookcont h1{
+		color: seagreen;
+		font-size: 50px;
+	}
+	#bookcont h2 button{
+		transition: all 0.5s ease-out;
+		font-size: 16px;
+		padding: 10px 12px;
+		background: dodgerblue;
+		border:none;
+		border-radius: 10px;
+	}
+	#bookcont h2 button:hover{
+		padding: 10px 90px;
+	}
+	#bookcont p{
+		font-size: 14px;
+	}
+	#map input{
+		border-radius: 20px;
+		outline:none;
+		border: none;
+		padding: 14px 16px;
+		font-size: 16px;
+		width: 97%;
+		outline:5px solid lightseagreen;
+	}
+	#innermap{
+		margin-top: 15px;
+	}
+	.tags:hover{
+		border-left: 3px solid dodgerblue;
+		border-right: 3px solid dodgerblue;;
+	}
+	.tags{
+		background: ghostwhite;
+		transition: all 0.2s ease-out;
+		box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.5);
+		border-radius: 20px;
+		padding: 15px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	.tags h1{
+		color: #2196F3;
+		font-weight: 1000;
+		font-size: 16px;
+		width: 30%;
+	}
+	.tags .amount{
+		color:goldenrod;
+		width:5%;
+	}
+	#form{
+		backdrop-filter: blur(10px);
+		position: absolute;
+		top: 10%;
+		left: 37%;
+		box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.5);
+		padding: 12px 14px;
+		width: 25%;
+		min-height: 70vh;
+		display: none;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+	}
+
+.num{
+	width:72%;
+}
+.button{
+	padding:7px 10px;
+	font-size:16px;
+	background:dodgerblue;
+	border:none;
+	border-radius: 10px;
+	color:white;
+	border:3px solid white;
+	transition: all 0.2s ease-out;
+}
+.button:hover{
+background: white;
+color:dodgerblue;
+border:3px solid dodgerblue;
+}
+#form h1{
+	margin-bottom: 30px;
+}
+.input{
+position:relative;
+max-width:100%;
+height:13vh;
+}
+.input label{
+position:absolute;
+top:6%;
+left:2%;
+font-size:16px;
+transition:all 0.5s ease-out;
+}
+.input input:focus + label{
+font-size:12px;
+top:-15%;
+color:orange;
+}
+.input input{
+width:100%;
+font-size:16px;
+outline:none;
+padding:8px 12px;
+border:none;
+color:black;
+border-bottom:5px solid black;
+background:transparent;
+}
+#form h1{
+color:deepskyblue;
+}
+.loginform{
+	width: 25%;
+	height: 50vh;
+	position: absolute;
+	top: 20%;
+	left: 36%;	
+	z-index: 100;
+	color: white;
+	border-radius: 10px;
+	backdrop-filter: brightness(10%);
+	box-shadow: 5px 5px 12px 1px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+	padding: 17px 14px;
+	display: none;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+.loginform input{
+	border-color: white;
+	color: white;
+}
+.loginform input[type="submit"]:hover{
+	color:dodgerblue;
+	border:none;
+	border:3px solid dodgerblue;
+}
+
+.lgform{
+	box-sizing: border-box;
+	padding: 30px 0px;
+	top: 15%;
+	height: 75vh;
+}
+</style>
+</head>
+<body>
+	<header>
+		<span><img src="60121-art-car-vector-bmw-m3-series.png"><span>ParkyRoutes</span></span>
+		<ul>
+			<li><a href="#body">Home</a></li>
+			<li><a href="#book">Book</a></li>
+			<li onclick="login()"><a>Login</a></li>
+			<li onclick="sign()"><a>Signup</a></li>
+		</ul>
+	</header>
+	<div id="body">
+		<div id="heading">
+		<h1><span style="color: lightgreen;">Need Parking</span> Don't Want Any Issues</h1>
+		<h2>Book And Park Here</h2>
+		<H3>Support Us To Make Impossible To Possible</H3>
+		</div>
+		<div id="roundback"></div>
+		<img id="img" src="kindpng_3538335.png">
+	</div>
+	<form class="loginform" action="login" method="POST">
+		<div class="input">
+				<input type="text" minlength="8" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="name" name="username"><label id="namelabel" for="name">Username</label>
+		</div>
+		<div class="input">
+				<input type="password" minlength="8" maxlength="15" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="pass" name="password"><label id="passwordlabel" for="pass">Password</label>
+		</div>
+		<input type="submit" value="login" class="button">
+	</form>
+	<form class="lgform loginform" action="addUser" method="POST">
+		<div class="input">
+			<input type="text" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" minlength="7" required id="lotlocation" required name="lotlocation"/><label for="lotlocation">LotLocation</label>
+		</div>
+		<div class="input">
+			<input type="number" min="1" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="floors" required name="floors"><label for="floors">Nooffloors</label>
+		</div><div class="input">
+			<input type="number" min="10" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="price" required name="price"/><label for="price">Hourprice</label>
+		</div>
+		<div class="input">
+			<input type="text" minlength="8" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="name2" required name="name"/><label for="name2">Username</label>
+		</div>
+		<div class="input">
+			<input type="password" minlength="8" maxlength="15" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="pass2" required name="password"><label for="pass2">Password</label>
+		</div>
+		<div class="input">
+			<input type="password" minlength="8" maxlength="15" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="pass3" required name="repassword"><label for="pass3">Reenterpassword</label>
+		</div>
+		<button class="button">Submit</button>
+	</form>
+	<div id="desc">
+		<div id="headbody">
+			<h1 style="color:lightseagreen;">More Than 3 Years of Successful Company</h1>
+			<h1 style="font-size: 14px;font-weight: 100;margin-top: 7rem;"><p>Our Customer Spread Across 100+ Countries</p>
+			<p>Maintain Highly Fastest Servers</p>
+			<p>Pick Lots In Any Location You Want</p>
+			<p>Your Rights Will Yours, No issuse , Trustable Resourses</p></h1>
+		</div>
+		<div id="head">
+			<div class="box">
+				<i class="fa-solid fa-person-biking" style="color: #90ee90;"></i>
+				<span>1k+ Customers</span>
+			</div>
+			<div class="box">
+				<i class="fa-solid fa-person-circle-plus" style="color: #90ee90;"></i>
+				<span>1M+ Above Booking</span>
+			</div>
+			<div class="box">
+				<i class="fa-solid fa-building-circle-check" style="color: #90ee90;"></i>
+				<span>Trusted Company</span>
+			</div>
+			<div class="box">
+				<i class="fa-solid fa-bookmark" style="color: #90ee90;"></i>
+				<span>No BlackMarks</span>
+			</div>
+		</div>
+	</div>
+	<div id="book">
+			<img src="pngwing.com (2).png">
+		<div id="bookcont">
+			<h1>Can't Wait Need To Book</h1>
+			<p style="text-align: center;">Use Our Website To Book Parks In Your Location No Issues Feel More Comfortable</p>
+			<p style="text-align: center;">Try Your First Booking To Luckily Be You Customer</p>
+			<h2><button onclick="getdet()">Try It</button></h2>
+		</div>
+		<div id="map" style="display:none">
+			<input type="text" id="input" placeholder="Search . . . . . . . . . . .">
+			<div id="innermap">
+				
+			</div>
+		</div>
+		<form action="insert" method="post" id="form">
+			<h1>Enter Your Details</h1>
+			<div class="input">
+			<input type="text" name="loc" readonly id="loc">
+			<label for="loc">Entered Location</label>
+			</div>
+			<div class="input">
+			<input type="text" name="name" minlength="8" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="name1">
+			<label for="name1">Enter Your Name</label>
+			</div>
+			<div class="input num">
+			<input type="number" name="num" min="9000000000" max="9999999999" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="number1">
+			<label for="number1">Enter Your Number</label>
+			</div>
+			<div class="input">
+			<input type="text" name="carnum" minlength="10" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="carnum">
+			<label for="carnum">Enter Your Carnumber</label>
+			</div>
+			<div class="input">
+			<input type="number" name="hours" onfocusin="this.nextElementSibling.style.top='-25%'" onfocusout="effect(this)" required id="hours" min="1" max="12">
+			<label for="hours">Enter Min Time To park</label>
+			</div>
+			<button class="button">Submit</button>
+		</form>
+	</div>
+</body>	
+<script src="samhome.js"></script>
+</html>

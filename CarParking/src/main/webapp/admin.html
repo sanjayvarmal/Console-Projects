@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	*{
+		color: white;
+		padding:0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color:rgb(8,8,8);
+	}
+	header{
+		position: sticky;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		background-color: rgb(8,8,8);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	header span{
+		color:white;
+		font-size: 20px;
+		font-weight: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	header span img{
+		width: 5rem;
+	}
+	header ul {
+		width:30rem;
+	}
+	header ul li{
+		list-style-type: none;
+		float: left;
+		margin-right: 2rem;
+		padding: 8px 12px;
+	}
+	header ul li a{
+		color: white;
+		text-decoration: none;
+	}
+	header ul li:hover a{
+		color: black;
+	}
+	header ul li:hover{
+	background:white;
+	}
+	#remainingbody{
+		padding:80px 35px;
+		height: 90vh;
+		width: 100%;
+	}
+	 h1{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	#viewlots{
+		width: 100%;
+		padding:80px 35px;
+		min-height: 100vh;
+		width: 100%;
+	}
+	#viewlots #innerview{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#innerview{
+		height: 20vh;
+	}
+	button,select{
+		background: black;
+		border: none;
+		border: 2px solid gold;
+		border-radius: 2px;
+		padding:4px 8px;
+		font-size: 16px;
+		font-weight: 1000;
+	}
+	table{
+		margin:8px 12px;
+		border-collapse: collapse;
+	}
+	table th,td{
+		border: 2px solid green;
+		padding: 8px 12px;
+	}
+	button:hover{
+		background-color: white;
+		color: black;
+	}
+	.box select{
+		border: none;
+		border: 2px solid gold;
+		padding: 5px 10px;
+		font-size: 16px;
+	}
+	.box select:focus{
+		background: gold;	
+	}
+	.box{
+		height: 10vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		font-size: 20px;
+	}
+	#displaylots{
+		margin-top: 2rem;
+		width: 100%;
+		min-height:60vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	#searchhistory{
+		padding:58px 45px;
+		height: 100vh;
+		width: 100%;
+	}
+	.search{
+		height: 20vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	.search input{
+		color:black;
+		padding: 5px 8px;
+		font-size: 16px;
+	}
+	#searched{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 60vh;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	#delete{
+		padding:58px 45px;
+		height: 100vh;
+		width: 100%;	
+	}
+	#viewlots{
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	#img{
+		position: absolute;
+		top: 30%;
+		left: 0%;
+		width: 50rem;
+	}
+	#remainingbody h1{
+		position: absolute;
+		top: 60%;
+		right: 5%;
+	}
+	#light{
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		background-color: red;
+		box-shadow: 10px 10px 20px 500px red;
+	}
+	@keyframes ani{
+		50%{
+			box-shadow: 5px 6px 10px 20px red;
+		}
+	}
+	#back{
+		animation: ani 1s ease-out infinite;
+		width:2rem;
+		height: 2rem;
+		position: absolute;
+		top: 45%;
+		left: 45%;
+		background-color: red;
+		border-radius: 100%;
+		filter:blur(20px);
+		z-index: 1000;
+	}
+	@keyframes ani1{
+		50%{
+			opacity: 1;
+			border-radius: 20px;
+			box-shadow: 5px 6px 10px 20px red;	
+		}
+	}
+	@keyframes ani2{
+		50%{
+			opacity: 1;
+		}
+	}
+	#heading{
+		width: 43%;
+		height: 2px;
+		animation: ani1 1s ease-out infinite;
+		background-color: red;
+		filter:blur(20px);
+		opacity: 0;
+	}
+</style>
+</head>
+<body>
+<header>
+	<span><img src="60121-art-car-vector-bmw-m3-series.png"><span>ParkyRoutes</span></span>
+	<ul>
+		<li><a href="#viewlots">ViewParks</a></li>
+		<li><a href="#searchhistory">SearchHistory</a></li>
+		<li><a href="#delete">Delete</a></li>
+		<li><a onclick="logout()">Logout</a></li>
+	</ul>
+</header>
+<div id="remainingbody">
+	<h1 style="top:58%;opacity: 0;backdrop-filter: blur(20px);animation: ani2 1s ease-out infinite;background: transparent;">Welcome back Chief Need To Use Anything</h1>
+	<h1 id="heading"></h1>
+	<div id="light"></div>
+	<div id="back"></div>
+	<img src="kindpng_7249201.png" id="img">
+</div>
+<div id="viewlots">
+	<h1 style="border-bottom:2px solid orange">Lot Details</h1>
+	<h1 id="innerview">
+			<div class="box">
+				<label><h3>Choose users</h3></label>
+				<select id="select" onclick="view()">
+					<option>choose</option>
+				</select>
+			</div>
+	</h1>
+	<div id="displaylots"></div>
+</div>
+<div id="searchhistory">
+	<h1 style="border-bottom:2px solid orange">Parker Details</h1>
+	<h1 id="innersearch">
+			<div class="search">
+				<label>Enter Vehicle Number</label>
+				<input type="text" name="number" id="number">
+				<button onclick="get()">Get</button>
+			</div>
+	</h1>
+	<div id="searched">
+	</div>
+</div>
+<div id="delete">
+	<h1 style="border-bottom:2px solid orange">Delete a Lot</h1>
+	<div>
+			<div class="search">
+				<label><h3>Enter Username</h3></label>
+				<input type="text" name="number" id="names" placeholder="Username to delete">
+				<button onclick="dele()">Delete</button>
+			</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="admin.js"></script>
+</html>

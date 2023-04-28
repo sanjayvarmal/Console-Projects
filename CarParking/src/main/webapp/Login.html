@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+
+}
+body{
+background:url('pexels-k-howard-2220292.jpg');
+background-size:cover;
+}
+#login{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.form{
+padding:30px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-direction:column;
+width:25%;
+min-height:70vh;
+backdrop-filter:blur(10px);
+}
+#logocontainer{
+width:8rem;
+height:8rem;
+overflow:hidden;
+border-radius:100%;
+background:yellow;
+}
+#logo{
+width:8rem;
+}
+#container{
+width:100%;
+height:30vh;
+}
+.input{
+position:relative;
+width:100%;
+height:13vh;
+}
+.input label{
+position:absolute;
+top:6%;
+left:2%;
+font-size:20px;
+color:white;	
+transition:all 0.5s ease-out;
+}
+.input input:focus + label{
+font-size:16px;
+top:-25%;
+color:orange;
+}
+.input input{
+width:100%;
+font-size:20px;
+outline:none;
+padding:8px 12px;
+border:none;
+border-bottom:5px solid black;
+background:transparent;
+color:white;
+}
+.button,button{
+	padding:7px 10px;
+	font-size:16px;
+	background:orange;
+	border:none;
+	border-radius: 10px;
+	color:white;
+	border:3px solid white;
+	transition: all 0.2s ease-out;
+}
+.button:hover,button:hover{
+background: white;
+color:orange;
+border:3px solid orange;
+}
+#buttondiv{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#load{
+	position: absolute;
+	backdrop-filter:blur(10px);
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	display: none;
+}
+#loadimg{
+	height: 15vh;
+	width: 15rem;
+	z-index: 20;
+	color: white;
+}
+#loadimg div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+}
+@keyframes ani{
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+#loadimg #d1{
+	animation: ani 0.5s infinite ease-out;
+	border-top: 5px solid black;
+	width:4rem;
+	height:4rem;
+	z-index: 30;
+	background-color: cyan;
+}
+#d2{
+	border-right: 5px solid black;
+	width: 3rem;
+	height:3rem;
+	z-index: 40;
+	background-color: orange;
+}
+#d3{
+	border-bottom: 5px solid black;
+	width: 2rem;
+	height:2rem;
+	z-index: 50;
+	background-color: red;
+}
+#d4{
+	border-left: 5px solid black;
+	width: 1rem;
+	height:1rem;
+	z-index: 60;
+	background-color: pink;
+}
+#sample{
+	height: 30vh;
+}
+#getquestion,#book{
+	color:white;
+	min-height: 20vh;
+	display: none;
+}
+#content{
+	padding: 10px 15px;
+min-height: 20vh;
+width: 100%;
+}
+
+	table{
+		margin:8px 12px;
+		border-collapse: collapse;
+	}
+	table th,td{
+		border: 2px solid green;
+		padding: 8px 12px;
+	}
+</style>
+</head>
+<body>
+<div id="load">
+<div id="loadimg">
+<div id="d1">
+<div id="d2"><div id="d3"><div id="d4"></div></div></div>
+</div>
+<h1>LOADING ....</h1>
+</div>
+</div>
+<div id="login">
+	<div class="form i1" id="nav">
+		<h1 style="color: white;border-bottom: 3px solid orange;">book</h1>
+		<div id="question">
+			<div class="input">
+			<input type="text" name="loc" id="location">
+			<label for="location" id="loclabel">Enter Your NeaBy Place</label>
+			</div>
+			<button type="button" onclick="getdet()">Submit</button>
+			<div id="sample"></div>
+		</div>
+		<div id="getquestion">
+			<div class="input">
+			<input type="number" name="num" id="number">
+			<label for="number">Enter The Row number</label>
+			</div>
+			<button type="button" onclick="paste()">Submit</button>
+			<div id="content"></div>
+		</div>
+		<form action="login" method="post" id="book">
+			<div class="input">
+			<input type="text" name="loc" id="loc">
+			<label for="loc">Entered Location</label>
+			</div>
+			<div class="input">
+			<input type="text" name="name" id="name1">
+			<label for="name1">Enter Your Name</label>
+			</div>
+			<div class="input">
+			<input type="number" name="num" id="number1">
+			<label for="numeber1">Enter Your Number</label>
+			</div>
+			<div class="input">
+			<input type="text" name="carnum" id="carnum">
+			<label for="carnum">Enter Your Carnumber</label>
+			</div>
+			<div class="input">
+			<input type="number" name="hours" id="hours">
+			<label for="hours">Enter Min Time To park</label>
+			</div>
+			<button>Submit</button>
+		</form>
+	</div>
+	<div class="form i2">
+		<div id="logocontainer">
+			<img src="Lovepik_com-401227379-man-in-a-suit.png" id="logo">
+		</div>
+		<div id="container">
+			<div class="input">
+				<input type="text" id="name" name="username"><label id="namelabel" for="name">Username</label>
+			</div>
+			<div class="input">
+				<input type="password" id="pass" name="password"><label id="passwordlabel" for="pass">Password</label>
+			</div>
+			<div id="buttondiv">
+				<button type="button" onclick="i11()"  class="button">Quickbook</button>
+				<input type="button" onclick="ld()" value="login" class="button">
+				<button type="button" onclick="i22()" class="button">Adduser</button>
+			</div>
+		</div>
+	</div>
+	<form class="form i3" action="login" method="post">
+		<div class="input">
+			<input type="text" id="lotlocation" required name="lotlocation"/><label for="lotlocation">LotLocation</label>
+		</div>
+		<div class="input">
+			<input type="number" id="floors" required name="floors"><label for="floors">Nooffloors</label>
+		</div><div class="input">
+			<input type="text" id="price" required name="price"/><label for="price">Hourprice</label>
+		</div>
+		<div class="input">
+			<input type="text" id="name2" required name="name"/><label for="name2">Username</label>
+		</div>
+		<div class="input">
+			<input type="password" id="pass2" required name="password"><label for="pass2">Password</label>
+		</div>
+		<div class="input">
+			<input type="password" id="pass3" required name="repassword"><label for="pass3">Reenterpassword</label>
+		</div>
+		<button>Submit</button>
+	</form>
+</div>
+</body>
+<script src="Login.js"></script>
+</html>

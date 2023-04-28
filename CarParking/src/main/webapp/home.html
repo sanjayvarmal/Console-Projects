@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+	*{
+		font-family:'Inter',sans-serif;
+		padding:0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: lightgreen;
+	}
+	header{
+		position: sticky;
+		top: 0;
+		left: 0;
+		padding: 12px 12px;
+		z-index: 1000;
+		backdrop-filter:blur(10px);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	header span{
+		font-size: 20px;
+		font-weight: 530;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	header span img{
+		width: 5rem;
+	}
+	header ul {
+		width:34rem;
+	}
+	header ul li{
+		list-style-type: none;
+		float: left;
+		margin-right: 2rem;
+		padding: 8px 12px;
+	}
+	header ul li a{
+		color: black;
+		text-decoration: none;
+	}
+	header ul li:hover{
+		background-color: white;
+	}
+	#body{
+		padding-bottom: 12rem;
+		height: 90vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#words h1,h3{
+		text-align: center;
+	}
+	#words h1{
+		color: seagreen;
+		margin-bottom: 15px;
+		font-size: 2.3rem;
+		text-align: right;
+	}
+	#words h3{
+		font-size: 1.5rem;
+	}
+	#body #words h1 img{
+	width: 10rem;
+	}
+	#ideadiv{
+		position: relative;
+		top: 0;
+		left: 20%;
+	}
+
+	#ideadiv span{
+		color: red;
+		font-size: 26px;
+		font-weight: 1000;
+		position: absolute;
+		top: 30%;
+		left: 10%;
+	}
+	#cars img{
+		width: 10rem;
+	}
+	#cars{
+		position: absolute;
+		top: 55%;
+		left: 2%;
+	}
+	#down .rock{
+		font-size: 26px;
+		font-weight: 1000;
+		position: absolute;
+		top: 10%;
+		left: 0%;
+	}
+	.idea{
+		width: 8rem;
+	}
+	#viewlots{
+		width: 100%;
+		min-height:100vh;
+		padding:5rem 2rem 1rem 2rem;
+	}
+	.col{
+		color: seagreen;
+	}
+	#viewlots h1{
+		text-align: center;
+	}
+	#view{
+		margin-top: 2rem;
+		width: 100%;
+		min-height:80vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	table{
+		margin:8px 12px;
+		border-collapse: collapse;
+	}
+	table th,td{
+		border: 2px solid seagreen;
+		padding: 8px 12px;
+	}
+	#viewdetails{
+		padding:40px 45px;
+		display: flex;
+		align-items: center;
+		flex-flow: column;
+		flex-wrap: wrap;
+		min-height: 100vh;
+		width:100%;
+	}
+	#viewdetails h1,input{
+		margin-bottom: 20px;
+	}
+	#viewdetails input{
+		font-size: 20px;
+		width: 10rem;
+	}
+	#viewdetails div button{
+		margin-left: 10px;
+		padding: 6px 10px;
+		border-radius:10px;
+		background-color: black;
+		color: white;
+		border: none;
+		border: 2px solid orange;
+	}
+	#viewdetails div button:hover{
+		background-color: white;
+		color: black;
+	}
+	#modifylots,#payment{
+		padding:80px 35px;
+		width: 100%;
+		height:100vh;
+	}
+	#modifylots h1,#payment h1{
+		text-align: center;
+	}
+	#main{
+		display: flex;
+		justify-content: center;
+		align-items: center;	
+		height: 70vh;
+	}
+	#modifylots form,#payment .box{
+		border-radius: 20px;
+		box-shadow: 2px 1px 10px 10px seagreen;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 12px;
+		width: 30%;
+		min-height:30vh; 
+	}
+	button{
+		border: none;
+		border: 2px solid white;
+		background-color: seagreen;
+		border-radius: 10px;
+		padding:6px 10px;
+		font-size: 16px;
+		font-weight: 1000;
+	}
+	button:hover{
+		border: 2px solid seagreen;
+		background-color: white;
+		color: seagreen;
+	}
+	.mod input,.box input{
+		border: none;
+		border: 2px solid seagreen;
+		padding: 5px 10px;
+		font-size: 16px;
+	}
+	.mod input:focus ,.box input:focus{
+		background: seagreen;	
+	}
+	.mod,.box{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		font-size: 20px;
+	}
+	#paybox{
+		height: 70vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
+</head>
+<body>
+<header>
+	<span><img src="60121-art-car-vector-bmw-m3-series.png"><span>ParkyRoutes</span></span>
+	<ul>
+		<li><a href="#viewlots">Lots</a></li>
+		<li><a href="#viewdetails">Details</a></li>
+		<li><a href="#modifylots">Modify</a></li>
+		<li><a href="#payment">Payment</a></li>
+		<li><a onclick="logout()">Logout</a></li>
+	</ul>
+</header>
+<div id="body">
+	<div id="words">
+		<h1><img src="58018-car-2002-2000-2001-z8-bmw.png"></h1>
+		<h1>Need Help Book Right Now To Stay Park Safe </h1>
+		<h3>Join Our Club And Excitement</h3>
+	</div>
+	<img class="rock" src="60694-3_-championship-cars-mcqueen-lightning-driven-to.png">
+		<div id="cars">
+		<div id="ideadiv">
+			<span>OOPS!...</span>
+		<img class="idea" src="kisspng-speech-balloon-thought-bubble-clip-art-think-bubble-5a771bdded4d99.756135641517755357972.png">
+		</div>
+		<img src="60136-blue-i8-car-sports-m5-vr-bmw.png">
+		<img src="81496-fiat-car-toro-automobiles-motor-vehicle.png">
+		</div>
+</div>
+<div id="viewlots">
+	<h1 class="col">View Your Today Lot Info</h1>
+	<div id="view">
+    </div>
+</div>
+<div id="viewdetails">
+	<h1 class="col">To Know Something Pick Random Date</h1>
+	<div>
+		<input type="date" name="date" min="2023-01-03" id="date"><button onclick="search()">Search</button>
+	</div>
+	<table id="users">
+		<tr><th>Name</th><th>Location</th><th>Date</th><th>phonenumber</th><th>NumberPlat</th><th>ParkTime</th><th>ExitTime</th></tr>
+
+	</table>
+</div>
+<div id="modifylots">
+	<h1 class="col">Choose Which To modify </h1>
+	<div id="main">
+	<form>
+		<div class ="mod">
+			<label>Password</label><input type="password" placeholder="must 1[a-z],1[A-Z],1[@.],1[1-9]" name="name" id="pass"/>
+		<div>
+		<div class ="mod">
+			<label>Lotsize</label><input type="number" name="name" id="lot">
+		<div>
+		<h1>
+			<button onclick="update()">Update</button>
+		</h1>
+	</form>
+	</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div id="payment">
+	<h1 class="col">Enter The Number You Want to pay</h1>
+	<div id="paybox">
+	<div class="box">
+		<label>Enter Vehicle Id</label>
+		<input type="text" name="number" id="vehnum">
+		<button onclick="pay()">Paid</button>
+	</div>
+	</div>
+</div>
+</body>
+<script src="home.js"></script>
+</html>
