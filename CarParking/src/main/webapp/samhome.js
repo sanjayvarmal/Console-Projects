@@ -121,6 +121,8 @@ function showPosition(position) {
         val+=sam[i].City+"@";
       }
       val+=sam[sam.length-1].City;
+      
+      console.log(val);
      obj.open("GET","http://localhost:8081/CarParking/login?val="+val);
     obj.send();
     } 

@@ -32,14 +32,17 @@ public class loginPassword  implements Filter{
 		HttpServletResponse res = (HttpServletResponse) response;
 		String password = req.getParameter("password");
 		System.out.println("password is:" +password+"login");
-		Matcher m = p.matcher(password);
-		if(m.matches()) {
-			System.out.println("password valid");
-			chain.doFilter(request, response);	
-		}
+		if(password==null) chain.doFilter(request, response);
 		else {
-			System.out.println("password invalid-filter");
-			res.sendRedirect("failed.html");
+			Matcher m = p.matcher(password);
+			if(m.matches()) {
+				System.out.println("password valid");
+				chain.doFilter(request, response);	
+			}
+			else {
+				System.out.println("password invalid-filter");
+				res.sendRedirect("failed.html");
+			}
 		}
 	}
 

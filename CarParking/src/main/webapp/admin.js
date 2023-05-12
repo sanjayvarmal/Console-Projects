@@ -76,8 +76,9 @@ obj.onreadystatechange=function(){
 			window.open("samhome.html","_self");
 			}
 		}	
-	};
+	}; 
 }
+
 function logout(){
 	k=4;
 	obj.open("GET","http://localhost:8081/CarParking/sessionDelete");

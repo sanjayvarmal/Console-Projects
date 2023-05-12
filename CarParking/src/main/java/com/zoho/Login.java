@@ -46,6 +46,7 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out1=response.getWriter();
 		String location=request.getParameter("val");
+		System.out.println(String.valueOf(location.split("@")[0]));
 		List<String> loc=repository.getInstance().checkLocation(location);
 		JSONArray arr=new JSONArray();
 		for(int i=0;i<loc.size();i++) {

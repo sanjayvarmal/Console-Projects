@@ -1,6 +1,7 @@
 package com.repository;
 
 import com.dto.*;
+import java.text.Normalizer;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -15,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class repository {
 
@@ -52,13 +54,28 @@ public class repository {
 	        }
 	        return repository;
 	    }
+	    public static String convertExtendedAsciiToAscii(String input) {
+	        // Remove diacritics from extended ASCII characters
+	        String normalizedString = Normalizer.normalize(input, Normalizer.Form.NFD);
+	        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+	        String asciiString = pattern.matcher(normalizedString).replaceAll("");
+
+	        // Remove remaining non-ASCII characters
+	        asciiString = asciiString.replaceAll("[^\\x00-\\x7F]", "");
+
+	        return asciiString;
+	    }
 	    public List<String> checkLocation(String loca){
 	    	String sam[]=loca.split("@");
+	    	for(int i=0;i<sam.length;i++) {
+	    		sam[i]=convertExtendedAsciiToAscii(sam[i]);
+	    		
+	    	}
 	    	String sear="";
 	    	for(int i=0;i<sam.length-1;i++) {
-	    		sear+="location like '%"+sam[i]+"%' or ";
+	    		sear+="location like '%"+sam[i].toLowerCase()+"%' or ";
 	    	}
-	    	sear+="location like '%"+sam[sam.length-1]+"%'";
+	    	sear+="location like '%"+sam[sam.length-1].toLowerCase()+"%'";
 	        List<String> sortedLoc=new ArrayList<>();
 	        String search="select * from users where "+sear,result="";
 	        try {
